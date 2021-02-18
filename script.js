@@ -61,7 +61,7 @@ function HexToRgb(hex) {
   const g = Number.parseInt(toG, 16);
   const b = Number.parseInt(toB, 16);
 
-  console.log("RGB : " + r + g + b);
+  // console.log("RGB : " + r + g + b);
   return { r, g, b };
 }
 
@@ -71,7 +71,7 @@ function RgbToHex(rgbObject) {
   const hexB = rgbObject.b.toString(16);
 
   const hex = "#" + hexR + hexG + hexB;
-  console.log(hex);
+  // console.log(hex);
   return hex;
 }
 
