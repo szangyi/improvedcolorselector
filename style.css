@@ -6,14 +6,15 @@
 
 #container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: 1000px;
   margin-top: 100px;
 }
 
 #inputContainer {
   display: flex;
-  flex-flow: column-wrap;
+  flex-direction: column;
+  align-self: center;
 }
 
 input {
@@ -25,11 +26,12 @@ input {
 p {
   margin: 20px;
   font-size: 1.5rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #color {
   width: 100%;
-  height: 100px;
+  height: 200px;
   margin: 10px;
 }
