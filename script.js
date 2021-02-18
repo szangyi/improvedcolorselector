@@ -5,26 +5,26 @@ document.querySelector("input").addEventListener("input", init);
 function init() {
   const input = document.querySelector("input").value;
   console.log(input);
-  let rgbObject = hextorgb(input);
+  let rgbObject = HexToRgb(input);
   console.log(rgbObject);
 
   let rgbShow = convert(rgbObject);
   showRgb(rgbShow);
 
-  const theShow = rgbToCss(rgbObject);
+  const theShow = RgbToCss(rgbObject);
   changeBack(theShow);
 
-  let finalHex = toHex(rgbObject);
+  let finalHex = RgbToHex(rgbObject);
   showHex(finalHex);
 
-  let finalHsl = toHls(rgbObject);
+  let finalHsl = RgbToHls(rgbObject);
   showHsl(finalHsl);
 }
 randomBackground();
 
 function randomBackground() {
   const theColor = randomColor();
-  const theString = rgbToCss(theColor);
+  const theString = RgbToCss(theColor);
   document.querySelector("#color").style.backgroundColor = theString;
 }
 function randomColor() {
@@ -33,7 +33,7 @@ function randomColor() {
   const b = Math.floor(Math.random() * 255);
   return { r, g, b };
 }
-function rgbToCss(theColor) {
+function RgbToCss(theColor) {
   const finalString = "rgb(" + theColor.r.toString() + ", " + theColor.g.toString() + ", " + theColor.b.toString() + ")";
   console.log(finalString);
   return finalString;
@@ -52,7 +52,7 @@ function changeBack(change) {
   document.querySelector("#color").style.backgroundColor = change;
 }
 
-function hextorgb(hex) {
+function HexToRgb(hex) {
   const toR = hex.substring(1, 3);
   const toG = hex.substring(3, 5);
   const toB = hex.substring(5, 7);
@@ -65,7 +65,7 @@ function hextorgb(hex) {
   return { r, g, b };
 }
 
-function toHex(rgbObject) {
+function RgbToHex(rgbObject) {
   const hexR = rgbObject.r.toString(16);
   const hexG = rgbObject.g.toString(16);
   const hexB = rgbObject.b.toString(16);
@@ -89,7 +89,7 @@ function convert(rgbObject) {
   return `RGB: (${r}, ${g}, ${b})`;
 }
 
-function toHls(rgbObject) {
+function RgbToHls(rgbObject) {
   let r = rgbObject.r;
   let g = rgbObject.g;
   let b = rgbObject.b;
